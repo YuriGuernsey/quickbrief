@@ -8,10 +8,10 @@ import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!)
 
-export default function BriefPage({ params }) {
+export default function BriefPage({ params }:any) {
   const router = useRouter()
   const [brief, setBrief] = useState(null)
-
+// Example 0df75f61-2fc9-4aa3-b196-ad86f887f1a8
   useEffect(() => {
     const fetchBrief = async () => {
       const { data: { user } } = await supabase.auth.getUser()
